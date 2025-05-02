@@ -20,5 +20,17 @@ namespace Test
         {
             InitializeComponent();
         }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Loginpagina komt hier.");
+        }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Registerpagina komt hier.");
+        }
     }
+
+
 }
