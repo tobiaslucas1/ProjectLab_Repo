@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Drive2Gether_logo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Drive2Gether_logo.jpg" />
+  </ItemGroup>
+
 </Project>
