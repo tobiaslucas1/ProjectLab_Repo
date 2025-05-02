@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
         Title="Drive2Gether" Height="500" Width="800">
-    <Grid Background="White">
+    <Grid Background="Black">
 
         <Border Background="#4C1130" Height="35" VerticalAlignment="Top">
             <Grid>
