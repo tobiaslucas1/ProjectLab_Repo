@@ -8,22 +8,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Test; 
+
 
 namespace Test
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+   
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+
+           
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Loginpagina komt hier.");
+            MainFrame.Navigate(new LoginPage());
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
