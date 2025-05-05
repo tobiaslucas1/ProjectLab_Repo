@@ -35,5 +35,7 @@ namespace Test
         {
             MessageBox.Show("Navigatie naar registratiepagina (nog te bouwen).");
         }
+
+
     }
 }
