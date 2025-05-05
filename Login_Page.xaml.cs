@@ -18,23 +18,7 @@ namespace Test
 {
     public partial class LoginPage : Page
     {
-        public LoginPage()
-        {
-            InitializeComponent();
-        }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            string email = EmailTextBox.Text;
-            string password = PasswordBox.Password;
-
-            MessageBox.Show($"Email: {email}\nWachtwoord: {password}", "Login Attempt");
-        }
-
-        private void RegisterLink_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Navigatie naar registratiepagina (nog te bouwen).");
-        }
 
 
     }
