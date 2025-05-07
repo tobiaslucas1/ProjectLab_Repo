@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
-        Title="Login_Page" Height="450" Width="800">
+        Title="Login_Page" Height="500" Width="800">
     <Grid Background="White">
         <Border Background="#4C1130" Height="35" VerticalAlignment="Top">
             <Grid>
