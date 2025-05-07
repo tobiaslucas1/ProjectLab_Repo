@@ -16,10 +16,22 @@ using Test;
 
 namespace Test
 {
-    public partial class LoginPage : Page
+    public partial class Login_Page : Page
     {
+        public Login_Page()
+        {
+            InitializeComponent();
+        }
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
 
-
+        private void RegisterLink_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterDriver());
+        }
 
     }
+
 }

@@ -14,14 +14,17 @@ using System.Windows.Shapes;
 
 namespace Test
 {
-    /// <summary>
-    /// Interaction logic for RegisterDriver.xaml
-    /// </summary>
-    public partial class RegisterDriver : Window
+   
+    public partial class RegisterDriver : Page
     {
         public RegisterDriver()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
