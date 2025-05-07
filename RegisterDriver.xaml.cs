@@ -21,5 +21,10 @@ namespace Test
         {
             InitializeComponent();
         }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

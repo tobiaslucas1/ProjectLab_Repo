@@ -22,6 +22,16 @@ namespace Test
         {
             InitializeComponent();
         }
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void RegisterLink_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterDriver());
+        }
+
     }
 
 }
