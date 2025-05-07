@@ -13,24 +13,13 @@ using Test;
 
 namespace Test
 {
-   
-    public partial class MainWindow : Window
+
+     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-
-           
-        }
-
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new LoginPage());
-        }
-
-        private void Register_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Registerpagina komt hier.");
+            MainFrame.Navigate(new HomePage());
         }
     }
 
