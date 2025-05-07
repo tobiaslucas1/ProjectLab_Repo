@@ -16,10 +16,12 @@ using Test;
 
 namespace Test
 {
-    public partial class LoginPage : Page
+    public partial class Login_Page : Page
     {
-
-
-
+        public Login_Page()
+        {
+            InitializeComponent();
+        }
     }
+
 }

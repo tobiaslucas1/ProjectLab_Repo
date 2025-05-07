@@ -14,10 +14,8 @@ using System.Windows.Shapes;
 
 namespace Test
 {
-    /// <summary>
-    /// Interaction logic for RegisterDriver.xaml
-    /// </summary>
-    public partial class RegisterDriver : Window
+   
+    public partial class RegisterDriver : Page
     {
         public RegisterDriver()
         {
