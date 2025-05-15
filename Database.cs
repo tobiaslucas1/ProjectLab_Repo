@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Test
+{
+    public static class Database
+    {
+        public static List<Driver> Drivers { get; set; } = new List<Driver>();
+    }
+}
