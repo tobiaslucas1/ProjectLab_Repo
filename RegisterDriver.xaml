@@ -1,74 +1,84 @@
 ﻿<Page x:Class="Test.RegisterDriver"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      Title="RegisterDriver"
-      Height="500"
-      Width="800">
+      Title="RegisterDriver" Height="500" Width="800">
 
-    <Grid Background="White">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Background="White" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <Border Background="#4C1130" Height="35" VerticalAlignment="Top">
-            <Grid>
-                <Image Source="/Drive2Gether_logo.jpg" Height="28" Width="28" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left"/>
-                <TextBlock Text="Drive2Gether" Foreground="White" VerticalAlignment="Center" FontWeight="Bold" Margin="50,0,0,0"/>
-                <Button Content="settings" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-            </Grid>
-        </Border>
+            <Border Background="#4C1130" Height="35">
+                <Grid>
+                    <Image Source="/Drive2Gether_logo.jpg" Height="28" Width="28" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Drive2Gether" Foreground="White" VerticalAlignment="Center" FontWeight="Bold" Margin="50,0,0,0"/>
+                    <Button Content="settings" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                </Grid>
+            </Border>
 
-        <Border Width="500" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="20" BorderBrush="Gray" BorderThickness="1" CornerRadius="10" Background="White">
-            <StackPanel>
+            <Border Grid.Row="1" Padding="20" BorderBrush="Gray" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="1" CornerRadius="10" Background="White" Margin="0,20,0,0">
+                <StackPanel>
 
-                <Label Content="Persoonlijke informatie" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
+                    <Label Content="Persoonlijke informatie" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
 
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                    <TextBox Width="220" Margin="0,0,10,0" Text="Voornaam*" GotFocus="TextBox_GotFocus"/>
-                    <TextBox Width="220" Text="Achternaam*" GotFocus="TextBox_GotFocus"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                    <TextBox Width="50" Margin="0,0,5,0" Text="DD" GotFocus="TextBox_GotFocus"/>
-                    <TextBox Width="50" Margin="0,0,5,0" Text="MM" GotFocus="TextBox_GotFocus"/>
-                    <TextBox Width="80" Margin="0,0,10,0" Text="YYYY" GotFocus="TextBox_GotFocus"/>
-                    <Label Content="Geslacht:" VerticalAlignment="Center" Margin="10,0,5,0"/>
-                    <RadioButton Content="Man" GroupName="Gender" Margin="5,0"/>
-                    <RadioButton Content="Vrouw" GroupName="Gender" Margin="5,0"/>
-                </StackPanel>
-
-                <TextBox Margin="0,0,0,5" Text="E-mailadres" GotFocus="TextBox_GotFocus"/>
-                <TextBox Margin="0,0,0,5" Text="Gsm" GotFocus="TextBox_GotFocus"/>
-                <TextBox Margin="0,0,0,10" Text="Woonplaats" GotFocus="TextBox_GotFocus"/>
-
-                <Label Content="Auto informatie" FontWeight="Bold" FontSize="14" Margin="0,10,0,10"/>
-
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                    <TextBox Width="280" Margin="0,0,10,0" Text="Merk en type" GotFocus="TextBox_GotFocus"/>
-                    <TextBox Width="160" Text="Nummerplaat" GotFocus="TextBox_GotFocus"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                    <StackPanel Margin="0,0,20,0">
-                        <Label Content="Kleur van auto"/>
-                        <ComboBox Width="120">
-                            <ComboBoxItem Content="Rood"/>
-                            <ComboBoxItem Content="Blauw"/>
-                            <ComboBoxItem Content="Groen"/>
-                            <ComboBoxItem Content="Zwart"/>
-                            <ComboBoxItem Content="Wit"/>
-                        </ComboBox>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                        <TextBox x:Name="FirstNameBox" Width="220" Margin="0,0,10,0" Text="Voornaam*"/>
+                        <TextBox x:Name="LastNameBox" Width="220" Text="Achternaam*"/>
                     </StackPanel>
 
-                    <StackPanel Margin="0,0,20,0">
-                        <Label Content="Roken toegestaan"/>
-                        <CheckBox Content="Ja/Nee"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                        <TextBox x:Name="DayBox" Width="50" Margin="0,0,5,0" Text="DD"/>
+                        <TextBox x:Name="MonthBox" Width="50" Margin="0,0,5,0" Text="MM"/>
+                        <TextBox x:Name="YearBox" Width="80" Margin="0,0,10,0" Text="YYYY"/>
+                        <Label Content="Geslacht:" VerticalAlignment="Center" Margin="10,0,5,0"/>
+                        <RadioButton x:Name="GenderMale" Content="Man" GroupName="Gender" Margin="5,0"/>
+                        <RadioButton x:Name="GenderFemale" Content="Vrouw" GroupName="Gender" Margin="5,0"/>
                     </StackPanel>
 
-                    <StackPanel>
-                        <Label Content="Muziek"/>
-                        <CheckBox Content="Ja/Nee"/>
+                    <TextBox x:Name="EmailBox" Margin="0,0,0,5" Text="E-mailadres"/>
+                    <TextBox x:Name="PhoneBox" Margin="0,0,0,5" Text="Gsm"/>
+                    <TextBox x:Name="CityBox" Margin="0,0,0,10" Text="Woonplaats"/>
+
+                    <Label Content="Auto informatie" FontWeight="Bold" FontSize="14" Margin="0,10,0,10"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                        <TextBox x:Name="CarModelBox" Width="280" Margin="0,0,10,0" Text="Merk en type"/>
+                        <TextBox x:Name="PlateBox" Width="160" Text="Nummerplaat"/>
                     </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <StackPanel Margin="0,0,20,0">
+                            <Label Content="Kleur van auto"/>
+                            <ComboBox x:Name="ColorComboBox" Width="120">
+                                <ComboBoxItem Content="Rood"/>
+                                <ComboBoxItem Content="Blauw"/>
+                                <ComboBoxItem Content="Groen"/>
+                                <ComboBoxItem Content="Zwart"/>
+                                <ComboBoxItem Content="Grijs"/>
+                                <ComboBoxItem Content="Geel"/>
+                                <ComboBoxItem Content="Wit"/>
+                                <ComboBoxItem Content="Andere"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,0,20,0">
+                            <Label Content="Roken toegestaan"/>
+                            <CheckBox x:Name="SmokingCheckBox" Content="Ja/Nee"/>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Label Content="Muziek"/>
+                            <CheckBox x:Name="MusicCheckBox" Content="Ja/Nee"/>
+                        </StackPanel>
+                    </StackPanel>
+
+
                 </StackPanel>
-            </StackPanel>
-        </Border>
 
-    </Grid>
+            </Border>
+            <Button Content="SAVE" Click="SaveButton_Click" HorizontalAlignment="Left" Margin="517,407,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.763,-0.125" Height="28" Width="104"/>
+        </Grid>
+    </ScrollViewer>
 </Page>
