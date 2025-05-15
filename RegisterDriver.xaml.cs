@@ -45,8 +45,11 @@ namespace Test
                 AllowsSmoking = SmokingCheckBox.IsChecked == true,
                 PlaysMusic = MusicCheckBox.IsChecked == true
             };
+            Database.Drivers.Add(newDriver);
+
             MessageBox.Show($"Nieuwe driver: {newDriver.FirstName} {newDriver.LastName}\nAuto: {newDriver.CarModel} ({newDriver.Color})");
-            NavigationService?.Navigate(new Login_Page());
+            
+            NavigationService.Navigate(new Login_Page());
 
         }
     }
