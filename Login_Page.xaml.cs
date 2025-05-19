@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Test;
-
 
 namespace Test
 {
@@ -22,16 +11,35 @@ namespace Test
         {
             InitializeComponent();
         }
+
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            string email = EmailBox.Text;
+            string password = PasswordBox.Password;
+
+            var user = Database.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+            if (user != null)
+            {
+                MessageBox.Show("Welkom gewone gebruiker");
+                ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new UserHomePage());
+                return;
+            }
+
+            var driver = Database.Drivers.FirstOrDefault(d => d.Email == email);
+            if (driver != null)
+            {
+                MessageBox.Show("Welkom chauffeur");
+                ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new DriverHomePage());
+                return;
+            }
+
+            MessageBox.Show("Foutieve inloggegevens.");
         }
 
         private void RegisterLink_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterDriver());
         }
-
     }
-
 }
+
