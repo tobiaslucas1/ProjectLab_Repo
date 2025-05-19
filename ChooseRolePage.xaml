@@ -1,0 +1,27 @@
+﻿<Page x:Class="Test.ChooseRolePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Registratierol kiezen"
+      Background="{DynamicResource BackgroundColor}">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+
+            <TextBlock Text="Kies jouw rol"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       TextAlignment="Center"
+                       Margin="0,0,0,20"
+                       Foreground="{DynamicResource TextColor}"/>
+
+            <Button Content="Registreer als Gebruiker"
+                    Click="RegisterUser_Click"
+                    Height="40"
+                    Margin="0,0,0,10"/>
+
+            <Button Content="Registreer als Bestuurder"
+                    Click="RegisterDriver_Click"
+                    Height="40"/>
+        </StackPanel>
+    </Grid>
+</Page>

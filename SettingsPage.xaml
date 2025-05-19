@@ -1,0 +1,40 @@
+﻿<Page x:Class="Test.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Instellingen" Background="{DynamicResource BackgroundColor}">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- HEADER -->
+        <Border Background="#4C1130" Height="40" VerticalAlignment="Top" CornerRadius="5">
+            <Grid>
+                <TextBlock Text="Instellingen" Foreground="White" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="20,0,0,0"/>
+                <Button Content="Terug naar Startpagina" Click="GoHome_Click" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+            </Grid>
+        </Border>
+
+        <!-- INSTELLINGEN -->
+        <StackPanel Grid.Row="1" Margin="0,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="400"
+                    Background="{DynamicResource BackgroundColor}">
+
+            <!-- Wachtwoord wijzigen -->
+            <TextBlock Text="Wachtwoord wijzigen" FontWeight="Bold" Margin="0,10" Foreground="{DynamicResource TextColor}"/>
+            <Label Content="Nieuw wachtwoord" Foreground="{DynamicResource TextColor}"/>
+            <PasswordBox x:Name="NewPasswordBox" Margin="0,5"/>
+            <Label Content="Bevestig wachtwoord" Foreground="{DynamicResource TextColor}"/>
+            <PasswordBox x:Name="ConfirmPasswordBox" Margin="0,5"/>
+            <Button Content="Opslaan" Width="100" Click="SavePassword_Click" Margin="0,10"/>
+
+            <!-- Thema kiezen -->
+            <TextBlock Text="Thema" FontWeight="Bold" Margin="20,20,0,5" Foreground="{DynamicResource TextColor}"/>
+            <ComboBox x:Name="ThemeComboBox" Width="200" SelectionChanged="ThemeComboBox_SelectionChanged">
+                <ComboBoxItem Content="Licht" IsSelected="True"/>
+                <ComboBoxItem Content="Donker"/>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Page>

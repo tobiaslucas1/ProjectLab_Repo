@@ -1,22 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Test;
-
 
 namespace Test
 {
-
     public partial class RegisterDriver : Page
     {
         public RegisterDriver()
@@ -26,10 +13,15 @@ namespace Test
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            // Your original empty handler — left untouched
         }
+
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            // ✅ Extract password
+            string wachtwoord = PasswordBox.Password;
+
+            // ✅ Create new driver with password included
             Driver newDriver = new Driver
             {
                 FirstName = FirstNameBox.Text,
@@ -43,14 +35,22 @@ namespace Test
                 Plate = PlateBox.Text,
                 Color = (ColorComboBox.SelectedItem as ComboBoxItem)?.Content.ToString(),
                 AllowsSmoking = SmokingCheckBox.IsChecked == true,
-                PlaysMusic = MusicCheckBox.IsChecked == true
+                PlaysMusic = MusicCheckBox.IsChecked == true,
+                Password = wachtwoord // ✅ Assuming your Driver model has this property
             };
+
             Database.Drivers.Add(newDriver);
 
             MessageBox.Show($"Nieuwe driver: {newDriver.FirstName} {newDriver.LastName}\nAuto: {newDriver.CarModel} ({newDriver.Color})");
-            
-            NavigationService.Navigate(new Login_Page());
 
+            NavigationService.Navigate(new Login_Page());
+        }
+
+        // ✅ NEW: Navigate back to homepage
+        private void GoHome_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new HomePage());
         }
     }
 }
+

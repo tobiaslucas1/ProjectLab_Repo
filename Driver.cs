@@ -20,6 +20,7 @@ namespace Test
         public string CarModel { get; set; }
         public string Plate { get; set; }
         public string Color { get; set; }
+        public string Password { get; set; }
         public bool AllowsSmoking { get; set; }
         public bool PlaysMusic { get; set; }
     }

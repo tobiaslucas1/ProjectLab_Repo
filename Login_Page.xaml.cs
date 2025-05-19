@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Configuration;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Test.Helpers;
 
 namespace Test
 {
@@ -19,8 +19,9 @@ namespace Test
             string email = EmailBox.Text;
             string password = PasswordBox.Password;
 
-            var user = Database.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
-            if (user != null)
+            // 🔐 Check user
+            var user = Database.Users.FirstOrDefault(u => u.Email == email);
+            if (user != null && HashHelper.VerifyPassword(password, user.Password))
             {
                 Session.CurrentUser = user;
                 Session.CurrentDriver = null;
@@ -29,8 +30,9 @@ namespace Test
                 return;
             }
 
+            // 🔐 Check driver
             var driver = Database.Drivers.FirstOrDefault(d => d.Email == email);
-            if (driver != null)
+            if (driver != null && HashHelper.VerifyPassword(password, driver.Password))
             {
                 Session.CurrentDriver = driver;
                 Session.CurrentUser = null;
@@ -44,7 +46,8 @@ namespace Test
 
         private void RegisterLink_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterDriver());
+            // ✅ Ga direct naar keuzepagina (in plaats van MessageBox)
+            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new ChooseRolePage());
         }
 
         private void Drive2Gether_Click(object sender, MouseButtonEventArgs e)
@@ -61,3 +64,4 @@ namespace Test
         }
     }
 }
+

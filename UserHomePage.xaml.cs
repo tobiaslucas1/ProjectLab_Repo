@@ -1,28 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Test
 {
-    /// <summary>
-    /// Interaction logic for UserHomePage.xaml
-    /// </summary>
     public partial class UserHomePage : Page
     {
         public UserHomePage()
         {
             InitializeComponent();
+
+            if (Session.CurrentUser != null)
+            {
+                var user = Session.CurrentUser;
+
+                WelcomeTextBlock.Text = $"Welkom terug, {user.FirstName}";
+                UserEmailText.Text = $"📧 Email: {user.Email}";
+                UserCityText.Text = $"🏙️ Woonplaats: onbekend"; // Voeg toe in model als je wilt
+                UserBirthText.Text = $"🎂 Geboortedatum: onbekend"; // idem
+                UserGenderText.Text = $"👤 Geslacht: onbekend"; // idem
+            }
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            Session.CurrentUser = null;
+            Session.CurrentDriver = null;
+
+            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new Login_Page());
+        }
+
+        private void OpenSettings_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new SettingsPage());
         }
     }
 }

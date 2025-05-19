@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using Test.Helpers;
 
 namespace Test
 {
-    /// <summary>
-    /// Interaction logic for RegisterPage.xaml
-    /// </summary>
     public partial class RegisterPage : Page
     {
         public RegisterPage()
@@ -23,15 +16,18 @@ namespace Test
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
+            string hashedPassword = HashHelper.HashPassword(PasswordBox.Password);
+
             User newUser = new User
             {
                 FirstName = FirstNameBox.Text,
                 LastName = LastNameBox.Text,
                 Email = EmailBox.Text,
-                Password = PasswordBox.Password
+                Password = hashedPassword // ✅ hashed opgeslagen
             };
 
             Database.Users.Add(newUser);
+
             MessageBox.Show($"Gebruiker {newUser.FirstName} is geregistreerd.");
             NavigationService.Navigate(new Login_Page());
         }
@@ -47,3 +43,4 @@ namespace Test
         }
     }
 }
+
