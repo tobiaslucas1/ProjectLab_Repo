@@ -13,7 +13,6 @@
                 </Grid>
             </Border>
 
-            <!-- Registratieformulier -->
             <StackPanel Margin="40,20" Width="300" HorizontalAlignment="Center">
                 <TextBlock Text="Voornaam" FontSize="16" Margin="0,5"/>
                 <TextBox x:Name="FirstNameBox" Margin="0,0,0,10" Height="30"/>
@@ -31,4 +30,4 @@
             </StackPanel>
         </StackPanel>
     </ScrollViewer>
-</Page>
+    </Page>

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Test
 {
@@ -20,7 +22,9 @@ namespace Test
             var user = Database.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
             if (user != null)
             {
-                MessageBox.Show("Welkom gewone gebruiker");
+                Session.CurrentUser = user;
+                Session.CurrentDriver = null;
+
                 ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new UserHomePage());
                 return;
             }
@@ -28,7 +32,9 @@ namespace Test
             var driver = Database.Drivers.FirstOrDefault(d => d.Email == email);
             if (driver != null)
             {
-                MessageBox.Show("Welkom chauffeur");
+                Session.CurrentDriver = driver;
+                Session.CurrentUser = null;
+
                 ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new DriverHomePage());
                 return;
             }
@@ -40,6 +46,18 @@ namespace Test
         {
             ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterDriver());
         }
+
+        private void Drive2Gether_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (Session.CurrentUser != null)
+                ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new UserHomePage());
+            else if (Session.CurrentDriver != null)
+                ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new DriverHomePage());
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new SettingsPage());
+        }
     }
 }
-

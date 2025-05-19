@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Test
 {
@@ -38,6 +34,16 @@ namespace Test
             Database.Users.Add(newUser);
             MessageBox.Show($"Gebruiker {newUser.FirstName} is geregistreerd.");
             NavigationService.Navigate(new Login_Page());
+        }
+
+        private void Drive2Gether_Click(object sender, MouseButtonEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new UserHomePage());
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new SettingsPage());
         }
     }
 }
