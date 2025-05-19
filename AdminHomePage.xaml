@@ -1,0 +1,43 @@
+﻿<Page x:Class="Test.AdminHomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="AdminHomePage" >
+    
+    <Grid Background="White">
+        <Border Background="#4C1130" Height="35" VerticalAlignment="Top">
+            <Grid>
+                <Image Source="/Drive2Gether_logo.jpg" Height="28" Width="28" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left"/>
+                <TextBlock Text="Drive2Gether" Foreground="White" VerticalAlignment="Center" FontWeight="Bold" Margin="50,0,0,0"/>
+            </Grid>
+        </Border>
+        <StackPanel>
+
+            <TextBlock Text="Overzicht van gebruikers" FontSize="16" FontWeight="SemiBold" Margin="0 50 0 10"/>
+            <ListView Name="UserListView" Height="300">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="50"/>
+                        <GridViewColumn Header="Voornaam" DisplayMemberBinding="{Binding FirstName}" Width="100"/>
+                        <GridViewColumn Header="Achternaam" DisplayMemberBinding="{Binding LastName}" Width="100"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
+                        <GridViewColumn Header="Rol" DisplayMemberBinding="{Binding Role}" Width="80"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center" >
+                <Button Content="Gebruiker aanmaken" Width="140" Click="CreateUser_Click"/>
+                <Button Content="Gebruiker bewerken" Width="140" Click="EditUser_Click"/>
+                <Button Content="Gebruiker verwijderen" Width="140" Click="DeleteUser_Click"/>
+            </StackPanel>
+
+           
+            <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center" >
+                <Button Content="Verzoeken beheren" Width="140"/>
+                <Button Content="Reset wachtwoord" Width="140"/>
+                <Button Content="Download statistieken" Width="160"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
+

@@ -18,7 +18,7 @@
                 </Grid>
             </Border>
 
-            <Border Grid.Row="1" Padding="20" BorderBrush="Gray" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="1" CornerRadius="10" Background="White" Margin="0,20,0,0">
+            <Border Grid.Row="1" Padding="20" BorderBrush="Gray" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="1" CornerRadius="10" Background="White" Margin="0,36,0,0">
                 <StackPanel>
 
                     <Label Content="Persoonlijke informatie" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
@@ -78,7 +78,7 @@
                 </StackPanel>
 
             </Border>
-            <Button Content="SAVE" Click="SaveButton_Click" HorizontalAlignment="Left" Margin="517,407,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.763,-0.125" Height="28" Width="104"/>
+            <Button Content="SAVE" Click="SaveButton_Click" HorizontalAlignment="Left" Margin="532,379,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.763,-0.125" Height="28" Width="104"/>
         </Grid>
     </ScrollViewer>
 </Page>
