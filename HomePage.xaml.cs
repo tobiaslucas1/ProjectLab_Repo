@@ -32,6 +32,12 @@ namespace Test
         {
             ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterDriver());
         }
+
+        private void Register_Click_User(object sender, RoutedEventArgs e)
+        {
+            RegisterUser registerPage = new RegisterUser();
+            NavigationService?.Navigate(registerPage);
+        }
     }
 
 }
