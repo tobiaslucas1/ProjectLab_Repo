@@ -40,7 +40,8 @@ namespace Test
                 Plate = PlateBox.Text,
                 Color = (ColorComboBox.SelectedItem as ComboBoxItem)?.Content.ToString(),
                 AllowsSmoking = SmokingCheckBox.IsChecked == true,
-                PlaysMusic = MusicCheckBox.IsChecked == true
+                PlaysMusic = MusicCheckBox.IsChecked == true,
+                Password = PasswordBox.Password
             };
             Database.Drivers.Add(newDriver);
 
