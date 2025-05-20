@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 
 namespace Test
 {
-
     public partial class HomePage : Page
     {
         public HomePage()
@@ -28,10 +27,14 @@ namespace Test
             ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new Login_Page());
         }
 
-        private void Register_Click(object sender, RoutedEventArgs e)
+        private void Register_Click_Driver(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterDriver());
         }
-    }
 
+        private void Register_Click_User(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterUser());
+        }
+    }
 }
