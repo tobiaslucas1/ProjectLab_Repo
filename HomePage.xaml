@@ -30,16 +30,12 @@
 
         <Button Content="Search" Width="96" Height="26" Margin="530,65,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
-        <Button Content="Register Driver" Width="120" Height="66" Margin="199,359,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
-        <Button Content="Register Passenger" Width="120" Height="66" Margin="483,359,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <Button Content="Register Driver" Width="120" Height="66" Margin="199,359,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="Register_Click_Driver" />
+        <Button Content="Register Passenger" Width="120" Height="66" Margin="483,359,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="Register_Click_User"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
-            <TextBlock>
-             <Hyperlink Click="Login_Click">Login here</Hyperlink>
-            </TextBlock>
-            <TextBlock Text=" or " VerticalAlignment="Center"/>
-            <TextBlock>
-             <Hyperlink Click="Register_Click">Register here</Hyperlink>
+            <TextBlock FontSize="18">
+             <Hyperlink Click="Login_Click">Login here </Hyperlink>
             </TextBlock>
         </StackPanel>
 

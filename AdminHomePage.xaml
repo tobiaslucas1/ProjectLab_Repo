@@ -25,11 +25,7 @@
                 </ListView.View>
             </ListView>
 
-            <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center" >
-                <Button Content="Gebruiker aanmaken" Width="140" Click="CreateUser_Click"/>
-                <Button Content="Gebruiker bewerken" Width="140" Click="EditUser_Click"/>
-                <Button Content="Gebruiker verwijderen" Width="140" Click="DeleteUser_Click"/>
-            </StackPanel>
+            
 
            
             <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center" >

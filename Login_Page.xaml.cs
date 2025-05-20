@@ -26,11 +26,13 @@ namespace Test
         {
             
         }
-
-        private void RegisterLink_Click(object sender, RoutedEventArgs e)
+        private void Home_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterDriver());
+            NavigationService?.Navigate(new HomePage());
         }
+
+
+      
 
     }
 

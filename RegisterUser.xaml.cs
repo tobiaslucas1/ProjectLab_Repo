@@ -24,14 +24,24 @@ namespace Test
         }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            string firstName = FirstNameBox.Text;
-            string lastName = LastNameBox.Text;
-            string email = EmailBox.Text;
-            string phone = PhoneBox.Text;
-            string city = CityBox.Text;
-            string password = PasswordBox.Password;
+            User newUser = new User
+            {
+                FirstName = FirstNameBox.Text,
+                LastName = LastNameBox.Text,
+                Email = EmailBox.Text,
+                Phone = PhoneBox.Text,
+                City = CityBox.Text,
+                Password = PasswordBox.Password
+            };
 
-            MessageBox.Show($"Gebruiker {firstName} {lastName} geregistreerd!");
+            Database.Users.Add(newUser);
+
+            MessageBox.Show($"Gebruiker {newUser.FirstName} {newUser.LastName} geregistreerd!");
+            NavigationService.Navigate(new Login_Page());
+        }
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new HomePage());
         }
     }
 }

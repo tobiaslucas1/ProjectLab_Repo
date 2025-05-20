@@ -24,10 +24,7 @@ namespace Test
             InitializeComponent();
         }
 
-        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             Driver newDriver = new Driver
@@ -51,6 +48,10 @@ namespace Test
             
             NavigationService.Navigate(new Login_Page());
 
+        }
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new HomePage());
         }
     }
 }
