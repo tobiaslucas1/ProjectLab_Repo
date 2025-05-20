@@ -22,5 +22,7 @@ namespace Test
         public string Color { get; set; }
         public bool AllowsSmoking { get; set; }
         public bool PlaysMusic { get; set; }
+        public string Password { get; set; }
     }
 }
+

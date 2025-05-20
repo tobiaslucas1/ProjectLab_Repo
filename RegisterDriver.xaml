@@ -20,7 +20,7 @@
                 </Grid>
             </Border>
 
-            <Border Grid.Row="1" Padding="20" BorderBrush="Gray" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="1" CornerRadius="10" Background="White" Margin="0,36,0,0">
+            <Border Grid.Row="1" Padding="20" BorderBrush="Gray" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="1" CornerRadius="10" Background="White" Margin="0,10,0,0">
                 <StackPanel>
 
                     <Label Content="Persoonlijke informatie" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
@@ -39,11 +39,19 @@
                         <RadioButton x:Name="GenderFemale" Content="Vrouw" GroupName="Gender" Margin="5,0"/>
                     </StackPanel>
 
-                    <TextBox x:Name="EmailBox" Margin="0,0,0,5" Text="E-mailadres"/>
-                    <TextBox x:Name="PhoneBox" Margin="0,0,0,5" Text="Gsm"/>
-                    <TextBox x:Name="CityBox" Margin="0,0,0,10" Text="Woonplaats"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                        <TextBox x:Name="EmailBox" Margin="0,0,10,5" Text="E-mailadres" HorizontalAlignment="Left" Width="220"/>
+                        <TextBox x:Name="PhoneBox" Margin="0,0,0,5" Text="Gsm" HorizontalAlignment="Right" Width="220"/>
+                    </StackPanel>
 
-                    <Label Content="Auto informatie" FontWeight="Bold" FontSize="14" Margin="0,10,0,10"/>
+                   
+                    <TextBox x:Name="CityBox" Text="Woonplaats" Width="220" HorizontalAlignment="Left"/>
+
+                    
+                    <Label Content="Wachtwoord:" />
+                    <PasswordBox x:Name="PasswordBox" Margin="0,0,0,0" Width="220" HorizontalAlignment="Left"/>
+
+                    <Label Content="Auto informatie" FontWeight="Bold" FontSize="14" Margin="0,5,0,10"/>
 
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                         <TextBox x:Name="CarModelBox" Width="280" Margin="0,0,10,0" Text="Merk en type"/>
@@ -80,7 +88,7 @@
                 </StackPanel>
 
             </Border>
-            <Button Content="SAVE" Click="SaveButton_Click" HorizontalAlignment="Left" Margin="532,379,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.763,-0.125" Height="28" Width="104"/>
+            <Button Content="SAVE" Click="SaveButton_Click" HorizontalAlignment="Left" Margin="514,379,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.763,-0.125" Height="28" Width="104"/>
         </Grid>
     </ScrollViewer>
 </Page>
