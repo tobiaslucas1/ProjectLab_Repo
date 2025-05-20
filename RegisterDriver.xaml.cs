@@ -27,7 +27,7 @@ namespace Test
        
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            Driver newDriver = new Driver
+            User newDriver = new User
             {
                 FirstName = FirstNameBox.Text,
                 LastName = LastNameBox.Text,
@@ -41,9 +41,10 @@ namespace Test
                 Color = (ColorComboBox.SelectedItem as ComboBoxItem)?.Content.ToString(),
                 AllowsSmoking = SmokingCheckBox.IsChecked == true,
                 PlaysMusic = MusicCheckBox.IsChecked == true,
-                Password = PasswordBox.Password
+                Password = PasswordBox.Password,
+                Role = "Driver",
             };
-            Database.Drivers.Add(newDriver);
+            Database.Users.Add(newDriver);
 
             MessageBox.Show($"Nieuwe driver: {newDriver.FirstName} {newDriver.LastName}\nAuto: {newDriver.CarModel} ({newDriver.Color})");
             

@@ -24,8 +24,28 @@ namespace Test
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            string email = EmailTextBox.Text;
+            string password = PasswordBox.Password;
+
+            var user = Database.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+
+            if (user == null)
+            {
+                MessageBox.Show("Foutieve inloggegevens.");
+                return;
+            }
+
+            MessageBox.Show($"Welkom, {user.FirstName}!");
+
+            if (user.Role == "Admin")
+                NavigationService.Navigate(new AdminHomePage());
+            else if (user.Role == "Driver")
+                NavigationService.Navigate(new DriverHomePage(user));
+            else
+                NavigationService.Navigate(new UserHomePage(user));
         }
+
+
         private void Home_Click(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new HomePage());

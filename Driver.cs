@@ -23,6 +23,7 @@ namespace Test
         public bool AllowsSmoking { get; set; }
         public bool PlaysMusic { get; set; }
         public string Password { get; set; }
+        public string Role { get; set; }
     }
 }
 

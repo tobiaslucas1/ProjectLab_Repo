@@ -31,7 +31,8 @@ namespace Test
                 Email = EmailBox.Text,
                 Phone = PhoneBox.Text,
                 City = CityBox.Text,
-                Password = PasswordBox.Password
+                Password = PasswordBox.Password,
+                Role = "User"  
             };
 
             Database.Users.Add(newUser);

@@ -14,5 +14,14 @@ namespace Test
         public string Phone { get; set; }
         public string City { get; set; }
         public string Password { get; set; }
+        public string Role { get; set; }
+
+        public string BirthDate { get; set; }
+        public string Gender { get; set; }
+        public string CarModel { get; set; }
+        public string Plate { get; set; }
+        public string Color { get; set; }
+        public bool AllowsSmoking { get; set; }
+        public bool PlaysMusic { get; set; }
     }
 }
