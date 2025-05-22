@@ -7,7 +7,11 @@
         <Border Background="#4C1130" Height="35" VerticalAlignment="Top">
             <Grid>
                 <Image Source="/Drive2Gether_logo.jpg" Height="28" Width="28" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left"/>
-                <TextBlock Text="Drive2Gether" Foreground="White" VerticalAlignment="Center" FontWeight="Bold" Margin="50,0,0,0"/>
+                <TextBlock VerticalAlignment="Center" FontWeight="Bold" Margin="50,0,0,0" Foreground="White">
+                <Hyperlink Click="Home_Click" Foreground="White" TextDecorations="{x:Null}">Drive2Gether</Hyperlink>
+                </TextBlock>
+
+                <Button Content="settings" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
             </Grid>
         </Border>
         <StackPanel>
@@ -17,10 +21,15 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="50"/>
+                        <GridViewColumn Header="Rol" DisplayMemberBinding="{Binding Role}" Width="80"/>
                         <GridViewColumn Header="Voornaam" DisplayMemberBinding="{Binding FirstName}" Width="100"/>
                         <GridViewColumn Header="Achternaam" DisplayMemberBinding="{Binding LastName}" Width="100"/>
                         <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
-                        <GridViewColumn Header="Rol" DisplayMemberBinding="{Binding Role}" Width="80"/>
+                        <GridViewColumn Header="Auto" DisplayMemberBinding="{Binding CarModel}" Width="100"/>
+                        <GridViewColumn Header="Nummerplaat" DisplayMemberBinding="{Binding Plate}" Width="100"/>
+                        <GridViewColumn Header="Kleur" DisplayMemberBinding="{Binding Color}" Width="80"/>
+                        <GridViewColumn Header="Roken" DisplayMemberBinding="{Binding AllowsSmoking}" Width="60"/>
+                        <GridViewColumn Header="Muziek" DisplayMemberBinding="{Binding PlaysMusic}" Width="60"/>
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -29,9 +38,9 @@
 
            
             <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center" >
-                <Button Content="Verzoeken beheren" Width="140"/>
+                <Button Content="Verwijder Account" Width="140" Click="RemoveAccount_Click" />
                 <Button Content="Reset wachtwoord" Width="140"/>
-                <Button Content="Download statistieken" Width="160"/>
+                <Button Content="Modify Accounts    " Width="160"/>
             </StackPanel>
         </StackPanel>
     </Grid>
