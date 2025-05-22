@@ -56,7 +56,7 @@
 
             <StackPanel x:Name="ColorPanel" Margin="0,5" Visibility="Collapsed">
                 <TextBlock Text="Kleur"/>
-                <ComboBox x:Name="ColorComboBox" Width="120">
+                <ComboBox x:Name="ColorComboBox" Width="120" HorizontalAlignment="Left">
                     <ComboBoxItem Content="Rood"/>
                     <ComboBoxItem Content="Blauw"/>
                     <ComboBoxItem Content="Groen"/>

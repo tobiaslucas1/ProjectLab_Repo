@@ -47,7 +47,7 @@ namespace Test
 
                 CarModelBox.Text = selectedUser.CarModel;
                 PlateBox.Text = selectedUser.Plate;
-                ColorBox.Text = selectedUser.Color;
+                ColorComboBox.Text = selectedUser.Color;
                 SmokingCheckBox.IsChecked = selectedUser.AllowsSmoking;
                 MusicCheckBox.IsChecked = selectedUser.PlaysMusic;
             }
@@ -66,7 +66,7 @@ namespace Test
             {
                 selectedUser.CarModel = CarModelBox.Text;
                 selectedUser.Plate = PlateBox.Text;
-                selectedUser.Color = ColorBox.Text;
+                selectedUser.Color = ColorComboBox.Text;
                 selectedUser.AllowsSmoking = SmokingCheckBox.IsChecked == true;
                 selectedUser.PlaysMusic = MusicCheckBox.IsChecked == true;
             }
