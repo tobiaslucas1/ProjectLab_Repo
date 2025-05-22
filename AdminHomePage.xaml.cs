@@ -52,6 +52,19 @@ namespace Test
                 MessageBox.Show("Account succesvol verwijderd.");
             }
         }
+        private void EditAccount_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedUser = UserListView.SelectedItem as User;
+
+            if (selectedUser == null)
+            {
+                MessageBox.Show("Selecteer een gebruiker om te bewerken.");
+                return;
+            }
+
+            NavigationService?.Navigate(new EditAccountPage(selectedUser));
+        }
+
 
     }
 }
