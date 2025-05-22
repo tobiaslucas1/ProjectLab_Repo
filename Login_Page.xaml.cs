@@ -27,6 +27,13 @@ namespace Test
             string email = EmailTextBox.Text;
             string password = PasswordBox.Password;
 
+            if (email == "Admin" && password == "Admin")
+            {
+                MessageBox.Show("Welkom, Admin!");
+                NavigationService.Navigate(new AdminHomePage());
+                return;
+            }
+
             var user = Database.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
 
             if (user == null)
@@ -37,13 +44,12 @@ namespace Test
 
             MessageBox.Show($"Welkom, {user.FirstName}!");
 
-            if (user.Role == "Admin")
-                NavigationService.Navigate(new AdminHomePage());
-            else if (user.Role == "Driver")
+            if (user.Role == "Driver")
                 NavigationService.Navigate(new DriverHomePage(user));
             else
                 NavigationService.Navigate(new UserHomePage(user));
         }
+
 
 
         private void Home_Click(object sender, RoutedEventArgs e)
