@@ -16,7 +16,7 @@
              <Hyperlink Click="Home_Click" Foreground="White" TextDecorations="{x:Null}">Drive2Gether</Hyperlink>
                 </TextBlock>
 
-                <Button Content="settings" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                <Button Content="settings" Click="Settings_Click" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
             </Grid>
         </Border>
         <Grid>

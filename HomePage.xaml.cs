@@ -35,6 +35,8 @@ namespace Test
         private void Register_Click_User(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterUser());
+
         }
+
     }
 }
