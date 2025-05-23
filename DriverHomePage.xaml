@@ -16,12 +16,13 @@
                     <Hyperlink Click="Home_Click" Foreground="White" TextDecorations="{x:Null}">Drive2Gether</Hyperlink>
                     </TextBlock>
 
-                    <Button Content="settings" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                <Button Content="settings" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0" Click="Settings_Click"/> 
+                    
                 </Grid>
             </Border>
         <Grid>
             <Border>
-                <TextBlock Text="Driver" FontSize="24" FontWeight="Bold" Margin="0,80,0,0" HorizontalAlignment="Center"/>
+                <TextBlock Text="Driver" FontSize="24" FontWeight="Bold" Margin="0,80,0,332" HorizontalAlignment="Center"/>
             </Border>
 
         </Grid>

@@ -72,7 +72,7 @@ namespace Test
             }
 
             MessageBox.Show("Accountgegevens succesvol bijgewerkt!");
-            NavigationService?.GoBack();
+            NavigationService.Navigate(new AdminHomePage());
         }
     }
 }
