@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Test
 {
@@ -14,5 +10,4 @@ namespace Test
         public DateTime DepartureDate { get; set; }
         public string DepartureTime { get; set; }
     }
-
 }

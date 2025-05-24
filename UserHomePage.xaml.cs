@@ -1,5 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Test
 {
@@ -12,8 +16,11 @@ namespace Test
             InitializeComponent();
             currentUser = user;
 
-            // Zet de ItemsSource van de ListView gelijk aan de lijst van RoadTrips uit de Database
+            // Laad ritten
             RoadTripListView.ItemsSource = Database.RoadTrips;
+
+            // Dubbelklik activeert chat
+            RoadTripListView.MouseDoubleClick += RoadTripListView_MouseDoubleClick;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
@@ -24,6 +31,28 @@ namespace Test
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SettingsPage(currentUser));
+        }
+
+        private void RoadTripListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (RoadTripListView.SelectedItem is RoadTrip selectedTrip)
+            {
+                User driver = selectedTrip.Driver;
+
+                if (driver != null && currentUser != null)
+                {
+                    // Zorg dat driver-email key bestaat
+                    if (!ChatMemory.AllChats.ContainsKey(driver.Email))
+                        ChatMemory.AllChats[driver.Email] = new();
+
+                    // Zorg dat user-chat bestaat
+                    if (!ChatMemory.AllChats[driver.Email].ContainsKey(currentUser.Email))
+                        ChatMemory.AllChats[driver.Email][currentUser.Email] = new ObservableCollection<ChatMessage>();
+
+                    // Navigeer naar de chatpagina met deze driver
+                    NavigationService.Navigate(new ChatPage(currentUser, driver));
+                }
+            }
         }
     }
 }
