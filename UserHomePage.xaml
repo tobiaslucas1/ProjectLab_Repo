@@ -23,8 +23,21 @@
             <Border>
                 <TextBlock Text="User" FontSize="24" FontWeight="Bold" Margin="0,80,0,0" HorizontalAlignment="Center"/>
             </Border>
-
+        
         </Grid>
+        <ListView x:Name="RoadTripListView" Margin="24,63,20,20" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Bestuurder" DisplayMemberBinding="{Binding Driver.FirstName}" Width="100"/>
+                    <GridViewColumn Header="Startstad" DisplayMemberBinding="{Binding StartCity}" Width="120"/>
+                    <GridViewColumn Header="Eindstad" DisplayMemberBinding="{Binding EndCity}" Width="120"/>
+                    <GridViewColumn Header="Vertrekdatum" DisplayMemberBinding="{Binding DepartureDate, StringFormat=d}" Width="100"/>
+                    <GridViewColumn Header="Vertrektijd" DisplayMemberBinding="{Binding DepartureTime}" Width="80"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
 
     </Grid>
 

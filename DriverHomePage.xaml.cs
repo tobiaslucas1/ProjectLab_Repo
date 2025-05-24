@@ -13,9 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace Test
 {
-   
     public partial class DriverHomePage : Page
     {
         private User currentUser;
@@ -24,19 +25,21 @@ namespace Test
         {
             InitializeComponent();
             currentUser = user;
-
-            // Hier kan je bijvoorbeeld specifieke driver-velden gebruiken, 
-            // maar dan moet die in User-class zitten (zoals CarModel, Plate, etc)
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new HomePage());
         }
+
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SettingsPage(currentUser));
-
+            NavigationService?.Navigate(new SettingsPage(currentUser));
         }
+        private void CreateRoadTrip_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new CreateRoadTripPage(currentUser));
+        }
+
     }
 }

@@ -7,26 +7,23 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DriverHomePage">
 
-    
+    <ScrollViewer>
         <Grid Background="White">
+            <!-- Navigatiebalk -->
             <Border Background="#4C1130" Height="35" VerticalAlignment="Top">
                 <Grid>
                     <Image Source="/Drive2Gether_logo.jpg" Height="28" Width="28" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left"/>
                     <TextBlock VerticalAlignment="Center" FontWeight="Bold" Margin="50,0,0,0" Foreground="White">
-                    <Hyperlink Click="Home_Click" Foreground="White" TextDecorations="{x:Null}">Drive2Gether</Hyperlink>
+                        <Hyperlink Click="Home_Click" Foreground="White" TextDecorations="{x:Null}">Drive2Gether</Hyperlink>
                     </TextBlock>
-
-                <Button Content="settings" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0" Click="Settings_Click"/> 
-                    
+                    <Button Content="settings" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0" Click="Settings_Click"/>
                 </Grid>
             </Border>
-        <Grid>
-            <Border>
-                <TextBlock Text="Driver" FontSize="24" FontWeight="Bold" Margin="0,80,0,332" HorizontalAlignment="Center"/>
-            </Border>
 
+            <!-- Knop Create RoadTrip -->
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,60,0,0">
+                <Button Content="Create a Roadtrip" Width="150" Height="40" Click="CreateRoadTrip_Click"/>
+            </StackPanel>
         </Grid>
-
-    </Grid>
-    
+    </ScrollViewer>
 </Page>

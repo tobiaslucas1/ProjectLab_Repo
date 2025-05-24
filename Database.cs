@@ -11,5 +11,8 @@ namespace Test
     {
         public static List<Driver> Drivers { get; set; } = new List<Driver>();
         public static List<User> Users { get; set; } = new List<User>();
+        public static List<RoadTrip> RoadTrips { get; set; } = new List<RoadTrip>();
+
+
     }
 }
