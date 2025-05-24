@@ -137,6 +137,7 @@ namespace Test
                 NavigationService?.Navigate(new UserHomePage(currentUser));
             else if (currentDriver != null)
                 NavigationService?.Navigate(new DriverHomePage(currentDriver));
+
         }
     }
 }
