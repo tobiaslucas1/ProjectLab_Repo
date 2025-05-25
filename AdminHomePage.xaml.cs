@@ -65,6 +65,11 @@ namespace Test
             NavigationService?.Navigate(new EditAccountPage(selectedUser));
         }
 
+        private void Admin_RoadTrips(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new Admin_RoadTrips());
+        }
+
 
     }
 }

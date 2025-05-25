@@ -38,7 +38,7 @@
            
             <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center" >
                 <Button Content="Verwijder Account" Width="140" Click="RemoveAccount_Click" />
-                <Button Content="" Width="140" />
+                <Button Content="RoadTrips" Click="Admin_RoadTrips" Width="140" />
                 <Button Content="Modify Accounts    " Width="160" Click="EditAccount_Click" />
             </StackPanel>
         </StackPanel>

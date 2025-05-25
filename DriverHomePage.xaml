@@ -9,7 +9,7 @@
 
     <ScrollViewer>
         <Grid Background="White">
-            <!-- Navigatiebalk -->
+            
             <Border Background="#4C1130" Height="35" VerticalAlignment="Top">
                 <Grid>
                     <Image Source="/Drive2Gether_logo.jpg" Height="28" Width="28" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left"/>
@@ -20,7 +20,7 @@
                 </Grid>
             </Border>
 
-            <!-- Knoppen in het midden -->
+            
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,60,0,0">
                 <Button Content="Create a Roadtrip" Width="150" Height="40" Click="CreateRoadTrip_Click" Margin="0,0,0,10"/>
                 <Button Content="Bekijk chats" Width="150" Height="40" Click="OpenChat_Click"/>
