@@ -1,0 +1,36 @@
+﻿<Page x:Class="Test.Admin_RoadTrips"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Admin_RoadTrips">
+
+    <Grid Background="White">
+        <Border Background="#4C1130" Height="35" VerticalAlignment="Top">
+            <Grid>
+                <Image Source="/Drive2Gether_logo.jpg" Height="28" Width="28" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left"/>
+                <TextBlock VerticalAlignment="Center" FontWeight="Bold" Margin="50,0,0,0" Foreground="White">
+                    <Hyperlink Click="Home_Click" Foreground="White" TextDecorations="{x:Null}">Drive2Gether</Hyperlink>
+                </TextBlock>
+            </Grid>
+        </Border>
+
+        <StackPanel Margin="0,40,0,0">
+            <TextBlock Text="Overzicht van alle RoadTrips" FontSize="16" FontWeight="SemiBold" Margin="0 20 0 10" HorizontalAlignment="Center"/>
+            <ListView Name="RoadTripListView" Height="300" Margin="20">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Chauffeur" DisplayMemberBinding="{Binding Driver.FirstName}" Width="100"/>
+                        <GridViewColumn Header="Startstad" DisplayMemberBinding="{Binding StartCity}" Width="100"/>
+                        <GridViewColumn Header="Eindstad" DisplayMemberBinding="{Binding EndCity}" Width="100"/>
+                        <GridViewColumn Header="Datum" DisplayMemberBinding="{Binding DepartureDate}" Width="100"/>
+                        <GridViewColumn Header="Tijd" DisplayMemberBinding="{Binding DepartureTime}" Width="100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center">
+                <Button Content="Verwijder Roadtrip" Width="140" Click="RemoveRoadTrip_Click" Margin="10,0"/>
+                <Button Content="Wijzig Roadtrip" Width="140" Click="EditRoadTrip_Click" Margin="10,0"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>

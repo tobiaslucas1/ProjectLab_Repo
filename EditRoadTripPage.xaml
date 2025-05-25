@@ -1,0 +1,32 @@
+﻿<Page x:Class="Test.EditRoadTripPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="EditRoadTripPage" Height="500" Width="800">
+
+    <Grid Background="White">
+        <Border Background="#4C1130" Height="35" VerticalAlignment="Top">
+            <Grid>
+                <Image Source="/Drive2Gether_logo.jpg" Height="28" Width="28" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock VerticalAlignment="Center" FontWeight="Bold" Margin="50,0,0,0" Foreground="White">
+                    <Hyperlink Click="Home_Click" Foreground="White" TextDecorations="{x:Null}">Drive2Gether</Hyperlink>
+                </TextBlock>
+            </Grid>
+        </Border>
+
+        <StackPanel Margin="250,74,250,-34" Width="300">
+            <TextBlock Text="Startstad" Margin="0,10,0,5"/>
+            <TextBox x:Name="StartCityTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Eindstad" Margin="0,10,0,5"/>
+            <TextBox x:Name="EndCityTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Vertrekdatum" Margin="0,10,0,5"/>
+            <DatePicker x:Name="DepartureDatePicker" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Vertrektijd (uur:min)" Margin="0,10,0,5"/>
+            <TextBox x:Name="DepartureTimeTextBox" Margin="0,0,0,10"/>
+
+            <Button Content="Opslaan" Click="SaveChanges_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

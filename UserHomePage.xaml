@@ -33,8 +33,14 @@
                     <GridViewColumn Header="Eindstad" DisplayMemberBinding="{Binding EndCity}" Width="120"/>
                     <GridViewColumn Header="Vertrekdatum" DisplayMemberBinding="{Binding DepartureDate, StringFormat=d}" Width="100"/>
                     <GridViewColumn Header="Vertrektijd" DisplayMemberBinding="{Binding DepartureTime}" Width="80"/>
+
+                    <GridViewColumn Header="Auto/Merk" DisplayMemberBinding="{Binding Driver.CarModel}" Width="120"/>
+                    <GridViewColumn Header="Kleur" DisplayMemberBinding="{Binding Driver.Color}" Width="80"/>
+                    <GridViewColumn Header="Roken toegestaan" DisplayMemberBinding="{Binding Driver.AllowsSmoking}" Width="100"/>
+                    <GridViewColumn Header="Muziek" DisplayMemberBinding="{Binding Driver.PlaysMusic}" Width="120"/>
                 </GridView>
             </ListView.View>
+
         </ListView>
 
 
