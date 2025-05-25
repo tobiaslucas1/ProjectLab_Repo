@@ -33,5 +33,10 @@ namespace Test
         {
             NavigationService?.Navigate(new ChatPage(currentUser));
         }
+        private void MyRoadTrips(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new MyRoadTripsPage());
+        }
+
     }
 }

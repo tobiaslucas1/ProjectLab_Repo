@@ -21,8 +21,16 @@ namespace Test
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new HomePage());
+            if (Database.CurrentUser != null)
+            {
+                NavigationService?.Navigate(new DriverHomePage(Database.CurrentUser));
+            }
+            else
+            {
+                MessageBox.Show("Er is geen ingelogde gebruiker gevonden.");
+            }
         }
+
 
         private void CreateRoadTrip_Click(object sender, RoutedEventArgs e)
         {

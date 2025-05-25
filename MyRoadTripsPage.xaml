@@ -1,0 +1,35 @@
+﻿<Page x:Class="Test.MyRoadTripsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="clr-namespace:Test"
+      Title="MyRoadTripsPage">
+
+    <Grid Background="White">
+        <StackPanel Margin="20">
+            <TextBlock Text="Mijn Roadtrips" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <ListView x:Name="MyRoadTripsListView" Height="300" Margin="0,0,0,10">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Startstad" DisplayMemberBinding="{Binding StartCity}" Width="120"/>
+                        <GridViewColumn Header="Eindstad" DisplayMemberBinding="{Binding EndCity}" Width="120"/>
+                        <GridViewColumn Header="Datum" DisplayMemberBinding="{Binding DepartureDate, StringFormat=d}" Width="100"/>
+                        <GridViewColumn Header="Tijd" DisplayMemberBinding="{Binding DepartureTime}" Width="80"/>
+                        <GridViewColumn Header="Acties">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Button Content="Bewerk" Click="EditRoadTrip_Click" Tag="{Binding}" Width="60"/>
+                                        <Button Content="Verwijder" Click="DeleteRoadTrip_Click" Tag="{Binding}" Width="70"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Button Content="Terug" Click="Back_Click" Width="100"/>
+        </StackPanel>
+    </Grid>
+</Page>
