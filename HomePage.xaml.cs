@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Test
 {
@@ -20,6 +10,10 @@ namespace Test
         public HomePage()
         {
             InitializeComponent();
+
+            // 🗺️ Dynamisch map-image laden van internet
+            string mapUrl = "https://static.vecteezy.com/ti/gratis-vector/p1/22966737-stedelijk-stad-kaart-stad-straten-gps-navigatie-downtown-kaart-met-wegen-parken-en-rivier-abstract-routekaart-navigatie-regeling-illustratie-vector.jpg";
+            MapImage.Source = new BitmapImage(new Uri(mapUrl));
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
@@ -35,8 +29,6 @@ namespace Test
         private void Register_Click_User(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new RegisterUser());
-
         }
-
     }
 }

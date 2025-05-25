@@ -1,42 +1,69 @@
 ﻿<Page x:Class="Test.HomePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Test"
-      mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="800"
-      Title="HomePage">
-    <Grid Background="White">
-        <Frame Name="MainFrame"/>
+      Title="HomePage"
+      Background="White">
 
-        <Border Background="#4C1130" Height="35" VerticalAlignment="Top">
-            <Grid>
-                <Image Source="/Drive2Gether_logo.jpg" Height="28" Width="28" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left"/>
-                <TextBlock Text="Drive2Gether" Foreground="White" VerticalAlignment="Center" FontWeight="Bold" Margin="50,0,0,0"/>
-            </Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="*"/>
+            <!-- Main -->
+            <RowDefinition Height="Auto"/>
+            <!-- Footer -->
+        </Grid.RowDefinitions>
+
+        <!-- 🔝 Header -->
+        <Border Background="#4C1130" Height="50" Grid.Row="0">
+            <TextBlock Text="Drive2Gether"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       Margin="20,0,0,0"/>
         </Border>
 
-        <Border BorderBrush="Gray" BorderThickness="1" Margin="100,111,100,149" Background="#FFEFEFEF">
-            <Image Source="/map.jpg" Height="225" Width="641" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        </Border>
+        <!-- 📦 Content -->
+        <StackPanel Grid.Row="1" Margin="0,20" HorizontalAlignment="Center">
 
-        <TextBox Width="120" Height="25" Margin="110,65,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Location A"/>
-        <TextBlock Text="→" FontSize="16" Margin="240,65,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <TextBox Width="120" Height="25" Margin="260,65,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Location B"/>
-        <DatePicker Width="120" Height="25" Margin="390,65,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <!-- 🌟 SLOGAN i.p.v. zoekbalk -->
+            <TextBlock Text="“Drive2Gether brengt bestuurders en passagiers samen op één platform. Deel je rit, bespaar kosten en bouw onderweg nieuwe connecties op.”"
+                       FontSize="22"
+                       FontWeight="SemiBold"
+                       Foreground="#2E2E2E"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"
+                       Width="650"
+                       Margin="0,20,0,30"/>
 
+            <!-- 🗺️ Afbeelding -->
+            <Image x:Name="MapImage"
+                   Height="250"
+                   Width="700"
+                   Stretch="UniformToFill"
+                   Margin="0,0,0,20"/>
 
-        <Button Content="Search" Width="96" Height="26" Margin="530,65,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-
-        <Button Content="Register Driver" Width="120" Height="66" Margin="199,359,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="Register_Click_Driver" />
-        <Button Content="Register Passenger" Width="120" Height="66" Margin="483,359,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="Register_Click_User"/>
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
-            <TextBlock FontSize="18">
-             <Hyperlink Click="Login_Click">Login here </Hyperlink>
-            </TextBlock>
+            <!-- 👥 Registratie -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                <Button Content="Registreer als Bestuurder"
+                        Width="180"
+                        Height="50"
+                        Margin="10"
+                        Click="Register_Click_Driver"/>
+                <Button Content="Registreer als Passagier"
+                        Width="180"
+                        Height="50"
+                        Margin="10"
+                        Click="Register_Click_User"/>
+            </StackPanel>
         </StackPanel>
 
+        <!-- 🔑 Login -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+            <TextBlock FontSize="16" Foreground="Black">
+                <Hyperlink Click="Login_Click">Al een account? Log hier in</Hyperlink>
+            </TextBlock>
+        </StackPanel>
     </Grid>
 </Page>
