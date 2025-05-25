@@ -42,6 +42,9 @@ namespace Test
                 return;
             }
 
+           
+            Database.CurrentUser = user;
+
             MessageBox.Show($"Welkom, {user.FirstName}!");
 
             if (user.Role == "Driver")
@@ -49,6 +52,7 @@ namespace Test
             else
                 NavigationService.Navigate(new UserHomePage(user));
         }
+
 
 
 
