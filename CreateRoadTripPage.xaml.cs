@@ -89,10 +89,31 @@ namespace Test
         {
             public static List<string> Cities = new List<string>
     {
-        "Antwerpen", "Brussel", "Gent", "Leuven", "Luik",
-        "Charleroi", "Brugge", "Namur", "Hasselt", "Mechelen"
+        "Aalst", "Andenne", "Antwerpen", "Arlon", "Asse",
+        "Aarschot", "Bastogne", "Beringen", "Bilzen", "Binche",
+        "Boom", "Bouillon", "Braine-le-Château", "Braine-l’Alleud", "Brasschaat",
+        "Brugge", "Brussel", "Châtelet", "Charleroi", "Chaudfontaine",
+        "Ciney", "Courcelles", "Dinant", "Diest", "Dilbeek",
+        "Dendermonde", "Eupen", "Eghezée", "Floreffe", "Fosses-la-Ville",
+        "Frameries", "Genappe", "Genk", "Geel", "Gembloux",
+        "Geraardsbergen", "Gent", "Grimbergen", "Habay", "Halle",
+        "Hannut", "Hasselt", "Havelange", "Herentals", "Herstal",
+        "Heusden-Zolder", "Houffalize", "Houthalen-Helchteren", "Huy", "Ieper",
+        "Jodoigne", "Knokke-Heist", "Kortrijk", "La Louvière", "Leuven",
+        "Libramont-Chevigny", "Liège", "Lier", "Lommel", "Lokeren",
+        "Luik", "Manage", "Maasmechelen", "Marche-en-Famenne", "Mechelen",
+        "Menen", "Mons", "Mortsel", "Mouscron", "Namur",
+        "Namen", "Neufchâteau", "Ninove", "Nivelles", "Oostende",
+        "Ottignies-Louvain-la-Neuve", "Oudenaarde", "Profondeville", "Rixensart", "Roeselare",
+        "Saint-Hubert", "Saint-Nicolas", "Sambreville", "Seraing", "Sint-Niklaas",
+        "Sint-Truiden", "Tielt", "Tienen", "Torhout", "Tongeren",
+        "Tournai", "Turnhout", "Tubize", "Vilvoorde", "Visé",
+        "Virton", "Wavre", "Waregem", "Waterloo", "Wetteren",
+        "Willebroek", "Zaventem", "Zottegem"
     };
         }
+
+
 
     }
 }

@@ -15,10 +15,12 @@
 
         <StackPanel Margin="250,74,250,-34" Width="300">
             <TextBlock Text="Startstad" Margin="0,10,0,5"/>
-            <TextBox x:Name="StartCityTextBox" Margin="0,0,0,10"/>
+            <ComboBox x:Name="StartCityComboBox" Margin="10"/>
+            
+
 
             <TextBlock Text="Eindstad" Margin="0,10,0,5"/>
-            <TextBox x:Name="EndCityTextBox" Margin="0,0,0,10"/>
+            <ComboBox x:Name="EndCityComboBox"  Margin="10"/>
 
             <TextBlock Text="Vertrekdatum" Margin="0,10,0,5"/>
             <DatePicker x:Name="DepartureDatePicker" Margin="0,0,0,10"/>
